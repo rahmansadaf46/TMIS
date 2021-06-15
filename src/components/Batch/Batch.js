@@ -7,6 +7,11 @@ const Batch = () => {
     const [batches, setBatch] = useState([]);
 
     useEffect(() => {
+        // fetch('')
+        //     .then(res => res.json())
+        //     .then(data => {                
+        //         setBatch(data);
+        //     })
         const category = fakeData.filter(pd => pd.category === "batch");
         setBatch(category);
 

@@ -6,7 +6,6 @@ const AddBatch = () => {
     // const [batch, setBatch] = useState([]);
     const onSubmit = data => {
         console.log(data);
-        // window.location.reload();
 
         fetch('', {
             method: 'POST',
@@ -16,8 +15,6 @@ const AddBatch = () => {
             .then(response => response.json())
             .then(data => {
                 if (data) {
-                    // setLoading(false);
-                    localStorage.removeItem("student");
                     window.location.reload();
                 }
             })
