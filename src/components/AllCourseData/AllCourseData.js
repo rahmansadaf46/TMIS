@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import fakeData from '../../fakeData';
+import { Link } from 'react-router-dom';
+
 
 const AllCourseData = ({ courses }) => {
 
@@ -25,18 +27,7 @@ const AllCourseData = ({ courses }) => {
                                 <td className=" text-center"><span className="mt-5"><b>{course.courseName}</b></span></td>
                                 <td className=" text-center"><b>{course.courseDescription}</b></td>
                                 <td><b>
-                                    <select className="form-control" name="department" >
-                                        <option disabled={true} value="Not set">Select Department</option>
-                                        <option >hello</option>
-                                        {/* {
-                                            dept.length === 0 && <option defaultValue={student.department}>{student.department}</option>
-                                        }
-                                        {
-                                            dept.map(department => <option defaultValue={department.department}>{department.department}</option>)
-                                        } */}
-
-                                    </select>
-
+                                    <Link to={`/courseDetails/${course.id}`} className="btn btn-primary">Details</Link>
                                 </b></td>
 
                             </tr>

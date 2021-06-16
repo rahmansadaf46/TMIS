@@ -11,7 +11,7 @@ import Header from "./components/Header/Header";
 import AddBatch from './components/AddBatch/AddBatch';
 import Course from './components/Course/Course';
 import AddCourse from './components/AddCourse/AddCourse';
-
+import CourseBatch from './components/CourseBatch/CourseBatch';
 
 export const UserContext = createContext();
 
@@ -31,6 +31,9 @@ function App() {
           </Route>
           <Route path="/addBatch">
             <AddBatch />
+          </Route>
+          <Route path="/courseDetails/:id">
+            <CourseBatch />
           </Route>
           <Route path="/addCourse">
             <AddCourse />
