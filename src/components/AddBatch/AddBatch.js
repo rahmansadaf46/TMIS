@@ -48,6 +48,9 @@ const AddBatch = () => {
 
 
     }
+
+    const [sDate, setSDate] = useState("");
+    console.log(sDate);
     return (
         <div>
             <div className="d-flex">
@@ -64,12 +67,12 @@ const AddBatch = () => {
                                 <div className="form-group row mb-1">
                                     <div className="form-group col-6">
                                         <label for=""><b>Start Date</b></label>
-                                        <input {...register("startDate")} required type="date" name="startDate" className="form-control" />
+                                        <input {...register("startDate")} onChange={e => setSDate(e.target.value)} required type="date" name="startDate" className="form-control" />
                                         {errors.roll && <span className="text-danger">This field is required</span>}
                                     </div>
                                     <div className="form-group col-6">
                                         <label for=""><b>End Date</b></label>
-                                        <input {...register("endDate")} required type="date" name="endDate" placeholder="Student's Roll" className="form-control" />
+                                        <input {...register("endDate")} min={sDate} defaultValue={sDate} required type="date" name="endDate" placeholder="Student's Roll" className="form-control" />
                                         {errors.roll && <span className="text-danger">This field is required</span>}
                                     </div>
                                 </div>
