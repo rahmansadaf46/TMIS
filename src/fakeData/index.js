@@ -1,6 +1,6 @@
 const fakeData = [{
     "id": "1",
-    title: "Batch 1",
+    title: "Covid 19 Batch 1",
     startDate: "15-06-21",
     endDate: "15-07-21",
     venue: "Dhaka",
@@ -10,7 +10,7 @@ const fakeData = [{
 },
 {
     "id": "2",
-    title: "Batch 2",
+    title: "Covid 19 Batch 2",
     startDate: "15-06-21",
     endDate: "15-07-21",
     venue: "Feni",
@@ -49,6 +49,18 @@ const fakeData = [{
     venue: "Rangamati",
     limitOfSeats: "30",
     category: "batch"
+},
+{
+    "id": "7",
+    courseName: "Covid 19",
+    courseDescription: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam, aperiam?",
+    category: "course"
+},
+{
+    "id": "8",
+    courseName: "Course 1",
+    courseDescription: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam, aperiam?",
+    category: "course"
 }
 
 ];

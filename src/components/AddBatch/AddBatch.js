@@ -1,10 +1,33 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import fakeData from '../../fakeData';
 
 const AddBatch = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     // const [batch, setBatch] = useState([]);
+    const [courseName, setCourseName] = useState('');
+    const [currentCourse, setCurrentCourse] = useState({});
+    const [courses, setCourses] = useState([]);
+
+    useEffect(() => {
+        // fetch('')
+        //     .then(res => res.json())
+        //     .then(data => {                
+        //         setBatch(data);
+        //     })
+        const category = fakeData.filter(pd => pd.category === "course");
+        setCourses(category);
+
+    }, [])
+    const changeCourse = (newCourse) => {
+        setCourseName(newCourse)
+        const category = courses.find(pd => pd.courseName === newCourse);
+        console.log(category);
+        setCurrentCourse(category);
+    }
     const onSubmit = data => {
+
+        data.course = currentCourse;
         console.log(data);
 
         fetch('', {
@@ -15,7 +38,7 @@ const AddBatch = () => {
             .then(response => response.json())
             .then(data => {
                 if (data) {
-                    window.location.reload();
+                    window.location.assign("/batch");
                 }
             })
 
@@ -57,10 +80,29 @@ const AddBatch = () => {
                                         {errors.name && <span className="text-danger">This field is required</span>}
                                     </div>
                                     <div className="form-group col-md-6">
-                                        <label for=""><b>Enter No. of sits</b></label>
+                                        <label for=""><b>Enter No. of seats</b></label>
                                         <input {...register("limitOfSeats")} required type="number" name="limitOfSeats" placeholder="Limit" className="form-control" />
                                         {errors.mobile && <span className="text-danger">This field is required</span>}
                                     </div>
+
+                                </div>
+                                <div className="row">
+                                    <div className="form-group col-md-6">
+                                        <label for=""><b>Select Course</b></label>
+                                        <select
+                                            onChange={(event) => changeCourse(event.target.value)}
+                                            value={courseName} className="form-control">
+                                            <option value="Not set">Select Course</option>
+
+                                            {
+                                                courses.map(course => <option value={course.courseName}>{course.courseName}</option>)
+                                            }
+
+
+                                        </select>
+                                        {errors.age && <span className="text-danger">This field is required</span>}
+                                    </div>
+
 
                                 </div>
                                 <div className="form-group row">
