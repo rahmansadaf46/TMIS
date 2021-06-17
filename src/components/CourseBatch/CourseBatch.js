@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { UserContext } from '../../App';
 import fakeData from '../../fakeData';
 import AllBatchData from '../AllBatchData/AllBatchData';
 
@@ -8,6 +9,9 @@ const CourseBatch = () => {
     const [batches, setBatch] = useState([]);
     const { id } = useParams();
     console.log(id)
+    const {
+        api: [api]
+    } = useContext(UserContext);
 
     useEffect(() => {
         // fetch('')

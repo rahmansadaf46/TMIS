@@ -36,12 +36,12 @@ const AddCourse = () => {
                             <form className="p-3 container col-6" onSubmit={handleSubmit(onSubmit)}>
                                 <div className="form-group">
                                     <label for=""><b>Enter Course Name</b></label>
-                                    <input  {...register("courseName")} required type="text" name="courseName" placeholder="Course Name" className="form-control" />
+                                    <input  {...register("title")} required type="text" name="title" placeholder="Course Name" className="form-control" />
                                     {errors.name && <span className="text-danger">This field is required</span>}
                                 </div>
                                 <div className="form-group">
                                     <label for=""><b>Enter Description</b></label>
-                                    <input {...register("courseDescription")} style={{ padding: '20px 0px 80px 12px' }} required type="text" name="courseDescription" placeholder="Description..." className="form-control" />
+                                    <input {...register("description")} style={{ padding: '20px 0px 80px 12px' }} required type="text" name="description" placeholder="Description..." className="form-control" />
                                     {errors.name && <span className="text-danger">This field is required</span>}
                                 </div>
                                 <div className="form-group">

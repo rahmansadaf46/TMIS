@@ -22,7 +22,7 @@ const AllBatchData = ({ batch }) => {
                         batch.map((batch) =>
 
                             <tr key={batch.id} style={{ background: 'white' }}>
-                                <td className=" text-center"><span className="mt-5"><b>{batch.title}</b></span></td>
+                                <td className=" text-center"><span className="mt-5"><b>{batch.name}</b></span></td>
                                 <td><b>{batch.startDate}</b></td>
                                 <td><b>{batch.endDate}</b></td>
                                 <td><b>{batch.venue}</b></td>
